@@ -23,6 +23,7 @@ export const Mermaid: FC<IMermaid> = ({ chart, name }) => {
     if (chart) mermaid.contentLoaded();
   }, [chart]);
 
+  // 导出svg
   const exportSvg = async () => {
     const svgData = await mermaid.render("text1", chart);
 
@@ -40,6 +41,7 @@ export const Mermaid: FC<IMermaid> = ({ chart, name }) => {
     document.body.removeChild(downloadLink);
   };
 
+  // 复制mermaid代码
   const copyMermaidCode = async () => {
     await navigator.clipboard.writeText(chart);
     alert("Mermaid Code" + chart);
@@ -47,7 +49,7 @@ export const Mermaid: FC<IMermaid> = ({ chart, name }) => {
 
   return (
     <div className="relative w-full flex justify-center">
-      <div className="absolute right-1 bottom-1 m-2 z-50 dropdown dropdown-end">
+      <div className="absolute right-1 top-4 m-2 z-50 dropdown dropdown-end">
         <label tabIndex={0} className="btn btn-success m-1">
           Export
         </label>

@@ -59,7 +59,7 @@ const Index = () => {
               <div className="flex flex-col justify-center text-white">
                 <h1 className="text-7xl font-black">Generate</h1>
                 <h3 className="text-8xl font-black text-success">Flowchart</h3>
-                <h2 className="text-5xl font-black">with AI</h2>
+                <h2 className="text-5xl font-black">with GPT</h2>
               </div>
             )}
           </>
@@ -74,14 +74,14 @@ const Index = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               type="text"
-              placeholder="What the flowchart is about"
+              placeholder="输入图表描述"
               autoFocus="on"
             />
             <button
               type="submit"
               className={`btn btn-grad btn-lg ${loading ? "loading" : ""}`}
             >
-              {error ? "Retry" : "Generate Flowchart"}
+              {error ? "重试" : "生成 Mermaid"}
             </button>
           </div>
           <SelectTemplate
